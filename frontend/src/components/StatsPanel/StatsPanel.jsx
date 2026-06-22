@@ -15,7 +15,7 @@ export default function StatsPanel({ rows, cols, status, visitedCount, pathLengt
   };
 
   return (
-    <div className={`${styles.panel} glass-panel`}>
+    <div className={styles.panel}>
       <div className={styles.stat}>
         <span className={styles.label}>Grid Size</span>
         <span className={styles.value}>{rows} × {cols}</span>

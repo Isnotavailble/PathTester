@@ -2,6 +2,12 @@
 
 Welcome to the **Path Tester Monorepo Project**! This project serves as an interactive algorithm testing playground and visualization tool for various pathfinding algorithms (such as Breadth-First Search (BFS), Depth-First Search (DFS), and A* Search).
 
+## 📸 Preview
+
+![Path Tester Dashboard](image.png)
+
+![Path Tester Visualization Results](image_1.png)
+
 ---
 
 ## 🚀 How It Works

@@ -224,8 +224,8 @@ function App() {
 
   return (
     <div className="appContainer">
-      <Header />
-      <div className="contentWrapper">
+      <div className="dashboardHeader glass-panel">
+        <Header />
         <StatsPanel
           rows={rows}
           cols={cols}
@@ -234,7 +234,9 @@ function App() {
           pathLength={pathCells.length}
           elapsedMs={elapsedMs}
         />
-
+      </div>
+      
+      <div className="contentWrapper">
         {alert && (
           <Alert
             message={alert.message}
@@ -256,10 +258,10 @@ function App() {
               onMoveStart={handleMoveStart}
               onMoveEnd={handleMoveEnd}
             />
-            <Legend />
           </div>
 
           <div className="layoutColumnRight">
+            <Legend />
             <ControlPanel
               key={`${rows}-${cols}`}
               rows={rows}

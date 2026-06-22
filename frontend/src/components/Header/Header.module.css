@@ -1,7 +1,7 @@
 .header {
-  text-align: center;
-  padding: 1.5rem 1rem 0.5rem;
-  margin-bottom: 1rem;
+  text-align: left;
+  padding: 0.25rem 0;
+  margin-bottom: 0;
 }
 
 .logoContainer {
@@ -35,7 +35,7 @@
 
 .title {
   font-family: var(--font-sans);
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: -0.05em;
   margin: 0;
@@ -68,4 +68,11 @@
   margin: 0.5rem auto 0;
   color: var(--text-secondary);
   line-height: 1.5;
+}
+
+@media (max-width: 860px) {
+  .header {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
 }

@@ -1,0 +1,82 @@
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  margin: 0 auto 1.5rem;
+  max-width: 850px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.box {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 800;
+  border: 1px solid var(--border-color);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.walkable {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.wall {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.start {
+  background: var(--accent-emerald-glow);
+  color: var(--accent-emerald);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 8px var(--accent-emerald-glow);
+}
+
+.end {
+  background: var(--accent-coral-glow);
+  color: var(--accent-coral);
+  border-color: var(--accent-coral);
+  box-shadow: 0 0 8px var(--accent-coral-glow);
+}
+
+.visited {
+  background: var(--accent-cyan-glow);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan-glow);
+}
+
+.path {
+  background: var(--accent-amber-glow);
+  border-color: var(--accent-amber);
+  box-shadow: 0 0 8px var(--accent-amber-glow);
+}
+
+@media (max-width: 640px) {
+  .legend {
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+  }
+  .label {
+    font-size: 0.75rem;
+  }
+}

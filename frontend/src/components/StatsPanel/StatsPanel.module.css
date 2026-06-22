@@ -1,0 +1,101 @@
+.panel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  margin: 1rem auto 2.5rem;
+  max-width: 950px;
+  box-sizing: border-box;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  box-sizing: border-box;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.stat:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  transform: translateY(-2px);
+}
+
+
+.divider {
+  width: 1px;
+  height: 35px;
+  margin: 23px;
+  background-color: var(--border-color);
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.statusIdle {
+  color: var(--text-secondary);
+}
+
+.statusRunning {
+  color: var(--accent-cyan);
+  text-shadow: 0 0 10px var(--accent-cyan-glow);
+  animation: pulseColor 1.5s infinite alternate;
+}
+
+.statusSuccess {
+  color: var(--accent-emerald);
+  text-shadow: 0 0 10px var(--accent-emerald-glow);
+}
+
+.statusFailed {
+  color: var(--accent-coral);
+  text-shadow: 0 0 10px var(--accent-coral-glow);
+}
+
+@keyframes pulseColor {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .panel {
+    flex-direction: column;
+    gap: 1.35rem;
+    padding: 1.6rem 1.5rem;
+    margin: 1.5rem auto 2rem;
+  }
+  .divider {
+    width: 85%;
+    height: 1px;
+    margin: 0.4rem 0;
+  }
+  .stat {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .stat:hover {
+    background-color: transparent;
+    transform: none;
+  }
+}

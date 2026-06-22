@@ -1,0 +1,154 @@
+.gridContainer {
+  margin: 0 auto 1.5rem;
+  max-width: 650px;
+  width: 100%;
+  padding: 0.8rem;
+  box-sizing: border-box;
+  user-select: none;
+  touch-action: none; /* Prevents scroll interference on touch screens */
+}
+
+.grid {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.01);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cell {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: crosshair;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+  position: relative;
+}
+
+.cellWalkable:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.cellWall {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+  animation: wallPulse 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes wallPulse {
+  0% {
+    transform: scale(1.08);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cellStart {
+  background: var(--accent-emerald-glow);
+  border-color: var(--accent-emerald);
+  cursor: grab;
+  box-shadow: inset 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.cellStart:active {
+  cursor: grabbing;
+}
+
+.cellEnd {
+  background: var(--accent-coral-glow);
+  border-color: var(--accent-coral);
+  cursor: grab;
+  box-shadow: inset 0 0 10px rgba(244, 63, 94, 0.2);
+}
+
+.cellEnd:active {
+  cursor: grabbing;
+}
+
+.markerText {
+  font-family: var(--font-sans);
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  font-weight: 800;
+  pointer-events: none;
+  animation: scaleIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cellStart .markerText {
+  color: var(--accent-emerald);
+  text-shadow: 0 0 8px var(--accent-emerald-glow);
+}
+
+.cellEnd .markerText {
+  color: var(--accent-coral);
+  text-shadow: 0 0 8px var(--accent-coral-glow);
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.4); }
+  100% { transform: scale(1); }
+}
+
+/* Animations for traversed cells */
+.cellVisited {
+  animation-name: visitedAnimation;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.1, 0.8, 0.25, 1);
+  animation-fill-mode: forwards;
+}
+
+@keyframes visitedAnimation {
+  0% {
+    transform: scale(0.3);
+    background-color: rgba(6, 182, 212, 0.15);
+    border-radius: 100%;
+  }
+  50% {
+    background-color: rgba(6, 182, 212, 0.45);
+    box-shadow: 0 0 12px var(--accent-cyan-glow);
+  }
+  75% {
+    transform: scale(1.06);
+    background-color: rgba(139, 92, 246, 0.25);
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--accent-cyan-glow);
+    border: 1px solid var(--accent-cyan);
+    box-shadow: 0 0 4px var(--accent-cyan-glow);
+  }
+}
+
+/* Animations for final path cells */
+.cellPath {
+  animation-name: pathAnimation;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-fill-mode: forwards;
+}
+
+@keyframes pathAnimation {
+  0% {
+    transform: scale(0.5);
+    background-color: rgba(245, 158, 11, 0.2);
+  }
+  50% {
+    transform: scale(1.12);
+    background-color: rgba(245, 158, 11, 0.7);
+    box-shadow: 0 0 15px var(--accent-amber-glow);
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--accent-amber-glow);
+    border: 1px solid var(--accent-amber);
+    box-shadow: 0 0 10px var(--accent-amber-glow);
+  }
+}

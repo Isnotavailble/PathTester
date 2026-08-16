@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/api/dfs';
+const API_URL = 'https://pathtester.onrender.com/api/dfs';
 
 /**
  * Sends a grid matrix, start point, and end point to the DFS endpoint

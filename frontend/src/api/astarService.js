@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/api/astar';
+const API_URL = 'https://pathtester.onrender.com/api/astar';
 
 /**
  * Sends a grid matrix, start point, and end point to the A* endpoint

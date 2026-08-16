@@ -57,7 +57,7 @@ public class DfsService {
             for (Node neighbour : neighbours) {
                 if (!visited.contains(neighbour)) {
                     if (dfs(neighbour, target, visited, traversalOrder, path)) {
-                        path.add(0, current); // Add current to path on recursive success
+                        path.addFirst(current); // Add current to path on recursive success
                         return true;
                     }
                 }

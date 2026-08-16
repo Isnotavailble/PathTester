@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080/api/bfs';
+const API_URL = 'https://pathtester.onrender.com/api/bfs';
 
 /**
  * Sends a grid matrix, start point, and end point to the BFS endpoint

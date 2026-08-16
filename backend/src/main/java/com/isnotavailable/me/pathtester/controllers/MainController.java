@@ -14,6 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("api/")
+@CrossOrigin("*")
 public class MainController {
 
     private final BfsService bfsService;
@@ -27,7 +28,6 @@ public class MainController {
     }
 
     @PostMapping("bfs")
-    @CrossOrigin("*")
     public ResponseEntity<?> findPath(@RequestBody BfsRequest request) {
         int[][] matrix = request.matrix();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
@@ -77,7 +77,6 @@ public class MainController {
     }
 
     @PostMapping("astar")
-    @CrossOrigin("*")
     public ResponseEntity<?> findPathAstar(@RequestBody AstarRequest request) {
         int[][] matrix = request.matrix();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
@@ -124,7 +123,6 @@ public class MainController {
     }
 
     @PostMapping("dfs")
-    @CrossOrigin("*")
     public ResponseEntity<?> findPathDfs(@RequestBody DfsRequest request) {
         int[][] matrix = request.matrix();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
